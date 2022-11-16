@@ -1,12 +1,9 @@
-const inputEl = document.querySelector('input');
-inputEl.addEventListener('blur', onInputBlur);
-dataSetInputEl = parseInt(input.dataset.length);
-function onInputBlur(event)  {
-    if (event.target.value.length === dataSetInputEl) {
-        inputEl.classList.remove('invalid');
-        inputEl.classList.add('valid');
+const inputDataEl = document.querySelector('input');
+const addInputText = (event) => {
+    (event.currentTarget.value.length === Number(inputDataEl.dataset.length)) ?
+    inputDataEl.setAttribute('class', 'valid') :
+    inputDataEl.setAttribute('class', 'invalid');
+};
 
-    } else{
-        inputEl.classList.add('invalid')
-    }
-}
+inputDataEl.addEventListener("blur", addInputText);
+
